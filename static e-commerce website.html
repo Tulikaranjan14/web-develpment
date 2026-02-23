@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tulika Store - Static E-commerce</title>
+</head>
+
+<body>
+
+<header>
+    <h1>🛍️ Tulika Online Store</h1>
+    <p>Your simple static shopping website</p>
+    <hr>
+
+    <nav>
+        <a href="#products">Products</a> |
+        <a href="#offers">Offers</a> |
+        <a href="#checkout">Checkout</a> |
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<hr>
+
+<!-- PRODUCTS SECTION -->
+<section id="products">
+<h2>Our Products</h2>
+
+<table border="1" cellpadding="10">
+<tr>
+    <th>Product</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Stock Level</th>
+    <th>Rating</th>
+</tr>
+
+<tr>
+<td>
+<figure>
+    <img src="https://via.placeholder.com/150" alt="Headphones">
+    <figcaption>Wireless Headphones</figcaption>
+</figure>
+</td>
+
+<td>
+<details>
+    <summary>View Details</summary>
+    Bluetooth connectivity<br>
+    Noise cancellation<br>
+    20-hour battery life
+</details>
+</td>
+
+<td>₹2,999</td>
+
+<td>
+<meter value="7" min="0" max="10">70%</meter>
+</td>
+
+<td>
+<meter value="4.5" min="0" max="5">4.5</meter>
+</td>
+</tr>
+
+<tr>
+<td>
+<figure>
+    <img src="https://via.placeholder.com/150" alt="Smart Watch">
+    <figcaption>Smart Watch</figcaption>
+</figure>
+</td>
+
+<td>
+<details>
+    <summary>View Details</summary>
+    Heart rate monitor<br>
+    Fitness tracking<br>
+    Water resistant
+</details>
+</td>
+
+<td>₹4,499</td>
+
+<td>
+<meter value="5" min="0" max="10">50%</meter>
+</td>
+
+<td>
+<meter value="4" min="0" max="5">4</meter>
+</td>
+</tr>
+
+<tr>
+<td>
+<figure>
+    <img src="https://via.placeholder.com/150" alt="Laptop Bag">
+    <figcaption>Laptop Bag</figcaption>
+</figure>
+</td>
+
+<td>
+<details>
+    <summary>View Details</summary>
+    Waterproof material<br>
+    15.6 inch support<br>
+    Extra compartments
+</details>
+</td>
+
+<td>₹1,199</td>
+
+<td>
+<meter value="9" min="0" max="10">90%</meter>
+</td>
+
+<td>
+<meter value="4.2" min="0" max="5">4.2</meter>
+</td>
+</tr>
+
+</table>
+</section>
+
+<hr>
+
+<!-- OFFERS SECTION -->
+<section id="offers">
+<h2>🔥 Today's Offer Progress</h2>
+
+<p>Sale Completion Status:</p>
+<progress value="65" max="100"></progress>
+<p>65% deals claimed!</p>
+
+</section>
+
+<hr>
+
+<!-- CHECKOUT FORM -->
+<section id="checkout">
+<h2>🧾 Checkout Form</h2>
+
+<form>
+
+<label>Name:</label><br>
+<input type="text" name="name" required><br><br>
+
+<label>Email:</label><br>
+<input type="email" name="email" required><br><br>
+
+<label>Select Product:</label><br>
+<select>
+    <option>Wireless Headphones</option>
+    <option>Smart Watch</option>
+    <option>Laptop Bag</option>
+</select>
+<br><br>
+
+<label>Quantity:</label><br>
+<input type="number" min="1" max="5"><br><br>
+
+<label>Delivery Address:</label><br>
+<textarea rows="4" cols="30"></textarea>
+<br><br>
+
+<label>Payment Method:</label><br>
+<input type="radio" name="payment"> UPI
+<input type="radio" name="payment"> Card
+<input type="radio" name="payment"> Cash on Delivery
+<br><br>
+
+<input type="submit" value="Place Order">
+
+</form>
+</section>
+
+<hr>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>📞 Contact Us</h2>
+
+<form>
+
+<label>Your Message:</label><br>
+<textarea rows="5" cols="40"></textarea><br><br>
+
+<label>Satisfaction Level:</label><br>
+<meter min="0" max="10" value="8"></meter>
+<br><br>
+
+<input type="submit" value="Send Message">
+
+</form>
+
+</section>
+
+<hr>
+
+<footer>
+<p>© 2026 Tulika Online Store | Static HTML Project</p>
+</footer>
+
+</body>
+</html>
