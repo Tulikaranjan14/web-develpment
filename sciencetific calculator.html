@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Scientific Calculator</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg,#1e3c72,#2a5298);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .calculator {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        width: 320px;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    #display {
+        width: 100%;
+        height: 50px;
+        font-size: 22px;
+        text-align: right;
+        margin-bottom: 15px;
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 8px;
+    }
+
+    button {
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        background: #f1f1f1;
+        transition: 0.2s;
+    }
+
+    button:hover {
+        background: #ddd;
+    }
+
+    .operator {
+        background: #4CAF50;
+        color: white;
+    }
+
+    .equal {
+        background: #2196F3;
+        color: white;
+        grid-column: span 2;
+    }
+
+    .clear {
+        background: #f44336;
+        color: white;
+    }
+
+    .func {
+        background: #ff9800;
+        color: white;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="calculator">
+    <h2>Scientific Calculator</h2>
+
+    <input type="text" id="display" readonly>
+
+    <div class="buttons">
+        <button class="clear" onclick="clearDisplay()">C</button>
+        <button onclick="deleteLast()">⌫</button>
+        <button onclick="append('(')">(</button>
+        <button onclick="append(')')">)</button>
+        <button class="operator" onclick="append('/')">÷</button>
+
+        <button class="func" onclick="calculateFunc('sin')">sin</button>
+        <button class="func" onclick="calculateFunc('cos')">cos</button>
+        <button class="func" onclick="calculateFunc('tan')">tan</button>
+        <button class="func" onclick="calculateFunc('log')">log</button>
+        <button class="operator" onclick="append('*')">×</button>
+
+        <button onclick="append('7')">7</button>
+        <button onclick="append('8')">8</button>
+        <button onclick="append('9')">9</button>
+        <button class="func" onclick="calculateFunc('sqrt')">√</button>
+        <button class="operator" onclick="append('-')">−</button>
+
+        <button onclick="append('4')">4</button>
+        <button onclick="append('5')">5</button>
+        <button onclick="append('6')">6</button>
+        <button class="func" onclick="append('**2')">x²</button>
+        <button class="operator" onclick="append('+')">+</button>
+
+        <button onclick="append('1')">1</button>
+        <button onclick="append('2')">2</button>
+        <button onclick="append('3')">3</button>
+        <button class="func" onclick="append(Math.PI)">π</button>
+        <button class="equal" onclick="calculate()">=</button>
+
+        <button onclick="append('0')">0</button>
+        <button onclick="append('.')">.</button>
+    </div>
+</div>
+
+<script>
+    const display = document.getElementById("display");
+
+    function append(value) {
+        display.value += value;
+    }
+
+    function clearDisplay() {
+        display.value = "";
+    }
+
+    function deleteLast() {
+        display.value = display.value.slice(0, -1);
+    }
+
+    function calculate() {
+        try {
+            display.value = eval(display.value);
+        } catch {
+            display.value = "Error";
+        }
+    }
+
+    function calculateFunc(func) {
+        try {
+            let value = eval(display.value);
+            let result;
+
+            switch(func) {
+                case "sin":
+                    result = Math.sin(value * Math.PI/180);
+                    break;
+                case "cos":
+                    result = Math.cos(value * Math.PI/180);
+                    break;
+                case "tan":
+                    result = Math.tan(value * Math.PI/180);
+                    break;
+                case "log":
+                    result = Math.log10(value);
+                    break;
+                case "sqrt":
+                    result = Math.sqrt(value);
+                    break;
+            }
+
+            display.value = result;
+        } catch {
+            display.value = "Error";
+        }
+    }
+</script>
+
+</body>
+</html>
